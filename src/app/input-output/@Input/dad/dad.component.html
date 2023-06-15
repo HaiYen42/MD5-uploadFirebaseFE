@@ -1,0 +1,6 @@
+<h1>Đây là bố</h1>
+<form action="">
+  <input #text type="text">
+  <button (click)="addStudent(text.value)">Add Student</button>
+</form>
+<app-child [dataFromDad]="listStudent"></app-child>

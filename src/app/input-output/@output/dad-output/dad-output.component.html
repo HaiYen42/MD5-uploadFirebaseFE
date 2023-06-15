@@ -1,0 +1,8 @@
+<p>dad-output works!</p>
+<app-child-output (sendData)="getData($event)"></app-child-output>
+<h1>Nhận dữ liệu vào</h1>
+<ul>
+  <li *ngFor="let st of listStudent">
+    {{st}}
+  </li>
+</ul>

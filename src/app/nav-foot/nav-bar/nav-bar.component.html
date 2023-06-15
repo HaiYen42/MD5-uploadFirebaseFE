@@ -1,0 +1,20 @@
+<div class="topnav" id="myTopnav">
+  <a routerLink="/" class="active">Home</a>
+  <div *ngIf="!checkLogin">
+    <a routerLink="register">Register</a>
+    <a routerLink="login">Login</a>
+  </div>
+  <div *ngIf="checkLogin">
+    <a routerLink="login">{{name}}</a>
+    <a routerLink="change-avatar"><img src="{{avatar}}" width="40" height="40" style="border-radius: 50%"></a>
+    <a (click)="logOut()">Log Out <mat-icon color="accent">logout</mat-icon></a>
+  </div>
+  <a target="_blank" href="https://github.com/nguyendongminhtri/FE-JV10-DEPLOY-DEMO"><img src="https://firebasestorage.googleapis.com/v0/b/dongchinh.appspot.com/o/images%2Fgit.png?alt=media&token=2d86060e-3b6f-400b-a187-0ed4954f2aec&_gl=1*v6dqcn*_ga*MTczODQ1MjQ5Ni4xNjg2NjAxNTI3*_ga_CW55HF8NVT*MTY4NjY1MDkxOS4zLjEuMTY4NjY1MDk1Ni4wLjAuMA.." alt="" style="border-radius: 50%" width="40" height="30">GIT FE JV10</a>
+  <a target="_blank" href="https://github.com/nguyendongminhtri/BE-JV10-DEPLOY-DEMO"><img src="https://firebasestorage.googleapis.com/v0/b/dongchinh.appspot.com/o/images%2Fgit.png?alt=media&token=2d86060e-3b6f-400b-a187-0ed4954f2aec&_gl=1*v6dqcn*_ga*MTczODQ1MjQ5Ni4xNjg2NjAxNTI3*_ga_CW55HF8NVT*MTY4NjY1MDkxOS4zLjEuMTY4NjY1MDk1Ni4wLjAuMA.." alt="" style="border-radius: 50%" width="40" height="30">GIT BE JV10</a>
+  <a routerLink="input">@Input</a>
+  <a routerLink="output">@Output</a>
+  <a routerLink="category">Category</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
