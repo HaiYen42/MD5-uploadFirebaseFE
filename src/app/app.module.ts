@@ -26,11 +26,19 @@ import { ChildOutputComponent } from './input-output/@output/child-output/child-
 import { DadOutputComponent } from './input-output/@output/dad-output/dad-output.component';
 import { ChangeAvatarComponent } from './form-login/change-avatar/change-avatar.component';
 import {AuthInterceptor} from "./service/auth.interceptor";
-import { ListCategoryComponent } from './content/category/list-category/list-category.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {CreateCategoryComponent} from "./content/category/create-category/create-category.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { CreateCategoryComponent } from './content/category/create-category/create-category.component';
+import { ListCategoryComponent } from './content/category/list-category/list-category.component';
+import { UpdateCategoryComponent } from './content/category/update-category/update-category.component';
+import { DeleteCategoryComponent } from './content/category/delete-category/delete-category.component';
+import { PageCategoryComponent } from './content/category/page-category/page-category.component';
+import { UploadFileComponent } from './upload/upload-file/upload-file.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { PageSongComponent } from './content/song/page-song/page-song.component';
+import { CreateSongComponent } from './content/song/create-song/create-song.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -47,9 +55,14 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     ChildOutputComponent,
     DadOutputComponent,
     ChangeAvatarComponent,
+    CreateCategoryComponent,
     ListCategoryComponent,
-    CreateCategoryComponent
-
+    UpdateCategoryComponent,
+    DeleteCategoryComponent,
+    PageCategoryComponent,
+    UploadFileComponent,
+    PageSongComponent,
+    CreateSongComponent,
   ],
   imports: [
     HttpClientModule,
@@ -67,7 +80,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatProgressSpinnerModule,
     MatDialogModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatSelectModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

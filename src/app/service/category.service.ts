@@ -1,21 +1,36 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment.development";
-import {Category} from "../model/Category";
+import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Category} from "../model/Category";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  //API LOCAL
-private API_CATEGORY = environment.API_LOCAL+'category';
+  private API_CATEGORY = environment.API_LOCAL +'category'
 
-  constructor(private httpClient: HttpClient) {  }
-    createCategoryService(category: Category): Observable<any>{
-      return this.httpClient.post<any>(this.API_CATEGORY, category);
-    }
-    getListService():Observable<any>{
-    return this.httpClient.get(this.API_CATEGORY);
-    }
+  constructor(private httpClient: HttpClient) { }
+  // @ts-ignore
+  createCategoryService(category: Category) :Observable<any>{
+    return this.httpClient.post<any>(this.API_CATEGORY, category)
+  }
+  getListCategory():Observable<any>{
+    return this.httpClient.get<any>(this.API_CATEGORY)
+  }
+
+  getCategoryById(id: number):Observable<any>{
+    return this.httpClient.get(this.API_CATEGORY+'/'+id);
+    // return this.httpClient.get(`${this.API_CATEGORY}/${id}`)
+  }
+  updateCategory(id: number, category: Category): Observable<any>{
+    return this.httpClient.put(this.API_CATEGORY+'/'+id, category);
+  }
+  deleteCategory(id: number):Observable<any>{
+    return this.httpClient.delete(this.API_CATEGORY+'/'+id)
+  }
+  getPageCategory(request: any):Observable<any>{
+    const  params = request;
+    return this.httpClient.get(this.API_CATEGORY +'/page',{params} )
+  }
 }

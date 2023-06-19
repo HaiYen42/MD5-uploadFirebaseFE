@@ -1,0 +1,9 @@
+.column{
+  width: 33.3%;
+  padding: 10px;
+}
+img{
+  width: auto;
+  height: 270px;
+  border-radius:8px;
+}

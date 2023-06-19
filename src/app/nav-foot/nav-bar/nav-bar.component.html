@@ -1,20 +1,69 @@
-<div class="topnav" id="myTopnav">
-  <a routerLink="/" class="active">Home</a>
-  <div *ngIf="!checkLogin">
-    <a routerLink="register">Register</a>
-    <a routerLink="login">Login</a>
-  </div>
-  <div *ngIf="checkLogin">
-    <a routerLink="login">{{name}}</a>
-    <a routerLink="change-avatar"><img src="{{avatar}}" width="40" height="40" style="border-radius: 50%"></a>
-    <a (click)="logOut()">Log Out <mat-icon color="accent">logout</mat-icon></a>
-  </div>
-  <a target="_blank" href="https://github.com/nguyendongminhtri/FE-JV10-DEPLOY-DEMO"><img src="https://firebasestorage.googleapis.com/v0/b/dongchinh.appspot.com/o/images%2Fgit.png?alt=media&token=2d86060e-3b6f-400b-a187-0ed4954f2aec&_gl=1*v6dqcn*_ga*MTczODQ1MjQ5Ni4xNjg2NjAxNTI3*_ga_CW55HF8NVT*MTY4NjY1MDkxOS4zLjEuMTY4NjY1MDk1Ni4wLjAuMA.." alt="" style="border-radius: 50%" width="40" height="30">GIT FE JV10</a>
-  <a target="_blank" href="https://github.com/nguyendongminhtri/BE-JV10-DEPLOY-DEMO"><img src="https://firebasestorage.googleapis.com/v0/b/dongchinh.appspot.com/o/images%2Fgit.png?alt=media&token=2d86060e-3b6f-400b-a187-0ed4954f2aec&_gl=1*v6dqcn*_ga*MTczODQ1MjQ5Ni4xNjg2NjAxNTI3*_ga_CW55HF8NVT*MTY4NjY1MDkxOS4zLjEuMTY4NjY1MDk1Ni4wLjAuMA.." alt="" style="border-radius: 50%" width="40" height="30">GIT BE JV10</a>
-  <a routerLink="input">@Input</a>
-  <a routerLink="output">@Output</a>
-  <a routerLink="category">Category</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+<!--<div class="topnav" id="myTopnav">-->
+<!--  <a routerLink="/" class="active">Home</a>-->
+<!--  <div *ngIf="!checkLogin">-->
+<!--    <a routerLink="register">Register</a>-->
+<!--    <a routerLink="login">Login</a>-->
+<!--  </div>-->
+<!--  <div *ngIf="checkLogin">-->
+<!--    <a routerLink="login">{{name}}</a>-->
+<!--    <a routerLink="change-avatar"><img src="{{avatar}}" width="40" height="40" style="border-radius: 50%"></a>-->
+<!--    <a (click)="logOut()">Log Out <mat-icon color="accent">logout</mat-icon></a>-->
+<!--  </div>-->
+<!--&lt;!&ndash;  <a target="_blank" href="https://github.com/nguyendongminhtri/FE-JV10-DEPLOY-DEMO"><img src="https://firebasestorage.googleapis.com/v0/b/dongchinh.appspot.com/o/images%2Fgit.png?alt=media&token=2d86060e-3b6f-400b-a187-0ed4954f2aec&_gl=1*v6dqcn*_ga*MTczODQ1MjQ5Ni4xNjg2NjAxNTI3*_ga_CW55HF8NVT*MTY4NjY1MDkxOS4zLjEuMTY4NjY1MDk1Ni4wLjAuMA.." alt="" style="border-radius: 50%" width="40" height="30">GIT FE JV10</a>&ndash;&gt;-->
+<!--&lt;!&ndash;  <a target="_blank" href="https://github.com/nguyendongminhtri/BE-JV10-DEPLOY-DEMO"><img src="https://firebasestorage.googleapis.com/v0/b/dongchinh.appspot.com/o/images%2Fgit.png?alt=media&token=2d86060e-3b6f-400b-a187-0ed4954f2aec&_gl=1*v6dqcn*_ga*MTczODQ1MjQ5Ni4xNjg2NjAxNTI3*_ga_CW55HF8NVT*MTY4NjY1MDkxOS4zLjEuMTY4NjY1MDk1Ni4wLjAuMA.." alt="" style="border-radius: 50%" width="40" height="30">GIT BE JV10</a>&ndash;&gt;-->
+<!--&lt;!&ndash;  <a routerLink="input">@Input</a>&ndash;&gt;-->
+<!--&lt;!&ndash;  <a routerLink="output">@Output</a>&ndash;&gt;-->
+<!--  <a routerLink="category">Category</a>-->
+<!--  <a routerLink="page-song"> <mat-icon color="accent">library_music</mat-icon>Song's Storage </a>-->
+<!--  <a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
+<!--    <i class="fa fa-bars"></i>-->
+<!--  </a>-->
+<!--</div>-->
+<!--<div id="preloder">-->
+<!--  <div class="loader"></div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Header Section Begin &ndash;&gt;-->
+<!--<header class="header">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-2">-->
+<!--        <div class="header__logo">-->
+<!--          <a href="./index.html">-->
+<!--            <img src="" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-8">-->
+<!--        <div class="header__nav">-->
+<!--          <nav class="header__menu mobile-menu">-->
+<!--            <ul>-->
+<!--              <li class="active"><a href="./index.html">Homepage</a></li>-->
+<!--              <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>-->
+<!--                <ul class="dropdown">-->
+<!--                  <li><a href="./categories.html">Categories</a></li>-->
+<!--                  <li><a href="./anime-details.html">Anime Details</a></li>-->
+<!--                  <li><a href="./anime-watching.html">Anime Watching</a></li>-->
+<!--                  <li><a href="./blog-details.html">Blog Details</a></li>-->
+<!--                  <li><a href="./signup.html">Sign Up</a></li>-->
+<!--                  <li><a href="./login.html">Login</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+<!--              <li><a href="./blog.html">Our Blog</a></li>-->
+<!--              <li><a href="#">Contacts</a></li>-->
+<!--            </ul>-->
+<!--          </nav>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-2">-->
+<!--        <div class="header__right">-->
+<!--          <a href="#" class="search-switch"><span class="icon_search"></span></a>-->
+<!--          <a href="./login.html"><span class="icon_profile"></span></a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div id="mobile-menu-wrap"></div>-->
+<!--  </div>-->
+<!--</header>-->
+<!-- Header End -->
+
